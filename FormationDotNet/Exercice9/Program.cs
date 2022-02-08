@@ -1,0 +1,13 @@
+﻿Console.WriteLine("--- Calcul des intérêts ---");
+Console.WriteLine();
+Console.Write("Entrer Capital de départ (en Euros) : ");
+float capital = float.Parse(Console.ReadLine());
+Console.Write("Entrer le taux d'intérêt (en %) : ");
+float tauxInteret = float.Parse(Console.ReadLine()) / 100;
+Console.Write("Entrer la durée de l'épargne (en années) : ");
+float duree = float.Parse(Console.ReadLine());
+Console.WriteLine();
+//Console.WriteLine("Le montant des intérêts sera de " + (capital*(tauxInteret/12)*duree) + " Euros après " + duree + " ans");
+//Console.WriteLine("Le capital final sera de " + (capital + capital * tauxInteret * duree) + " Euros");
+Console.WriteLine();
+Console.WriteLine("Appuyer sur une touche pour fermer le programme...");
