@@ -13,10 +13,10 @@ namespace ForumNouvelles
         public List<Abonne> Abonnes { get; set; } = new List<Abonne>();
         public List<Nouvelle> Nouvelles { get; set; } = new List<Nouvelle>();
 
-        public Forum(string nom)
+        public Forum(string nomForum, string nomModerateurDefaut, string prenomModerateurDefaut, int ageModerateurDefaut)
         {
-            Nom = nom;
-            Abonnes.Add(new Moderateur("Moderateur par Défaut", "", 0, this));
+            Nom = nomForum;
+            Abonnes.Add(new Moderateur(nomModerateurDefaut, prenomModerateurDefaut, ageModerateurDefaut, this));
         }
 
         public override string ToString()

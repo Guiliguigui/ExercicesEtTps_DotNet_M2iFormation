@@ -96,23 +96,25 @@ namespace TpCompteBancaireHeritage.Classes
             string prenom = Console.ReadLine();
             Console.Write("Le téléphone du client : ");
             string tel = Console.ReadLine();
+            Console.Write("Solde à l'ouverture : ");
+            double solde = double.Parse(Console.ReadLine());
 
             Client client = new Client(nom, prenom, tel);
             Compte compte;
             switch (choix)
             {
                 case "1":
-                    compte = new Compte(0, client);
+                    compte = new Compte(solde, client);
                     break;
                 case "2":
                     Console.Write("Taux de remuneration : ");
                     double tauxRemuneration = double.Parse(Console.ReadLine());
-                    compte = new CompteEpargne(0, client, tauxRemuneration);
+                    compte = new CompteEpargne(solde, client, tauxRemuneration);
                     break;
                 case "3":
                     Console.Write("Cout d'operation : ");
                     double coutOperation = double.Parse(Console.ReadLine());
-                    compte = new ComptePayant(0, client, coutOperation);
+                    compte = new ComptePayant(solde, client, coutOperation);
                     break;
                 default:
                     return;

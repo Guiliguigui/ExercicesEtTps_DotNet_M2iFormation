@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tp5HeritageSalaire", "TpHer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForumNouvelles", "ForumNouvelles\ForumNouvelles.csproj", "{FE2DF65A-D0D1-4D79-9D39-60918D932DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpCompteBancaireHeritage", "TpCompteBancaireHeritage\TpCompteBancaireHeritage.csproj", "{E3E1519E-8007-41F5-9446-C2881CCD2906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpCompteBancaireHeritage", "TpCompteBancaireHeritage\TpCompteBancaireHeritage.csproj", "{E3E1519E-8007-41F5-9446-C2881CCD2906}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
