@@ -1,0 +1,24 @@
+﻿<Window x:Class="TpNombreMystere.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TpNombreMystere"
+        mc:Ignorable="d"
+        Title="Le nombre mystère" Height="387" Width="800">
+    <Grid Background="Orange">
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" Text="Le nombre mystère" TextAlignment="Center" FontSize="48" Foreground="White" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="J'ai généré un nombre entre 1 et 50" TextAlignment="Center" FontSize="24" Foreground="White"/>
+            <TextBlock x:Name="textRetour1" TextWrapping="Wrap" Text="" TextAlignment="Center" FontSize="36"/>
+            <TextBlock x:Name="textRetour2" TextWrapping="Wrap" Text="Veuillez saisir un nombre" TextAlignment="Center" FontSize="36"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
+                <Label x:Name="lblNbEssais" Content="Nombre d'Essais : 0" FontSize="24" Foreground="White" Margin="0,0,10,0"/>
+                <TextBox x:Name="tbEssai" TextWrapping="Wrap" Text="" Width="120" Margin="0,0,10,0" TextAlignment="Center" FontSize="24" />
+                <Button x:Name="btnValider" Content="Valider" Click="ValiderSaisie_Click" FontSize="24" Background="DarkViolet" Foreground="White" Width="85" FontFamily="Comic Sans MS"/>
+            </StackPanel>
+            <Button x:Name="btnRecommencer" Content="Nouvelle Partie" Click="RecommencerSaisie_Click" FontSize="24" Background="DarkViolet" Foreground="White" Margin="30,0,30,0" FontFamily="Comic Sans MS"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
