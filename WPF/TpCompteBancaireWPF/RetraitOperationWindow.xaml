@@ -1,0 +1,22 @@
+﻿<Window x:Class="TpCompteBancaireWPF.RetraitOperationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TpCompteBancaireWPF"
+        mc:Ignorable="d"
+        Title="RetraitOperation" Height="165" Width="315">
+    <Grid>
+        <GroupBox Header="Retirer des fonds" Margin="5 0">
+            <StackPanel>
+                <Label x:Name="lblIdCompte" Content="Id Compte : "/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Montant de l'opération : "/>
+                    <TextBox x:Name="TextBoxMontant" Width="130"/>
+                </StackPanel>
+                <Button x:Name="Valider" Content="Valider" Margin="5 5" Click="Valider_Click"/>
+                <Button x:Name="Annuler" Content="Annuler" Margin="5 0" Click="Annuler_Click"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

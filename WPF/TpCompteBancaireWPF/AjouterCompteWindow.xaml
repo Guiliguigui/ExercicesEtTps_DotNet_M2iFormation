@@ -1,0 +1,50 @@
+﻿<Window x:Class="TpCompteBancaireWPF.AjouterCompteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TpCompteBancaireWPF"
+        mc:Ignorable="d"
+        Title="Ajouter Compte" Height="345" Width="800">
+    <Grid>
+        <GroupBox Header="Création Compte" >
+            <StackPanel Orientation="Vertical" >
+                <GroupBox Header="Création Client" Margin="5 0">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5">
+                            <Label Content="Nom : " Width="74"/>
+                            <TextBox Width="305" x:Name="TextBoxNom"/>
+                            <Label Content="Prenom : "/>
+                            <TextBox Width="305" x:Name="TextBoxPrenom"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5">
+                            <Label Content="Téléphone : "/>
+                            <TextBox Width="439" x:Name="TextBoxTelephone"/>
+                            <Label Content="Id Client : " x:Name="LabelIdClient"/>
+                        </StackPanel>
+                        <Button x:Name="AjouterClient" Content="Ajouter Client" Click="AjouterClient_Click" Margin="5 5"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Compte" Margin="5 0">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5">
+                            <Label Content="Solde : "/>
+                            <TextBox Width="305" x:Name="TextBoxSolde" Margin="0,0,30,0"/>
+                            <RadioButton x:Name="CompteNormalRdBtn" Content="Normal" Margin="10 5" IsChecked="True"/>
+                            <RadioButton x:Name="CompteEpargneRdBtn" Content="Epargne" Margin="10 5"/>
+                            <RadioButton x:Name="ComptePremiumRdBtn" Content="Premium" Margin="10 5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 5">
+                            <Label Content="Taux d'Intérets : " Width="92"/>
+                            <TextBox Width="268" x:Name="TextBoxInterets"/>
+                            <Label Content="Coût d'opération : "/>
+                            <TextBox Width="285" x:Name="TextBoxCoutOperation"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+                <Button x:Name="CreerCompte" Content="Créer Compte" Click="CreerCompte_Click" Margin="5 5"/>
+                <Button x:Name="Annuler" Content="Annuler" Click="Annuler_Click" Margin="5 5"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
