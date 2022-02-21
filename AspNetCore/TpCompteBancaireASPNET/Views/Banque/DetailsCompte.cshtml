@@ -1,0 +1,49 @@
+﻿@model Compte
+@{
+    ViewData["Title"] = $"Compte n°{Model.Id}";
+}
+
+<div>
+    <h1>Compte n°@Model.Id</h1>
+    <div class="row">
+        <div class="col text-center">Client : @Model.Client.Nom @Model.Client.Prenom @Model.Client.Telephone</div>
+        <div class="col text-center">Solde : @Model.Solde €</div>
+    </div>
+    <div class"row">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date Opération</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Montant</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Operation o in Model.Operations)
+                {
+                    <tr>
+                        <th  scope="row">@o.Id</th>
+                        <td>@o.DateOperation</td>
+                        <td>@o.Type</td>
+                        <td>@o.Montant</td>
+                    </tr>
+                }
+                @if(Model.Operations.Count == 0)
+                {
+                    <tr>
+                        <th colspan="4" scope="row">Aucune Operations</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <a asp-controller="Banque" asp-action="Depot" asp-route-id="@Model.Id" class="btn btn-success col">Dépôt</a>
+        <a asp-controller="Banque" asp-action="Retrait" asp-route-id="@Model.Id" class="btn btn-danger col">Retrait</a>
+        @if (Model is CompteEpargne)
+        {
+            <a asp-controller="Banque" asp-action="CalculerInterrets" asp-route-id="@Model.Id" class="btn btn-warning col">Calculer</a>
+        }
+    </div>
+</div>

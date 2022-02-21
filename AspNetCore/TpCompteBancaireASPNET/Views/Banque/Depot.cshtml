@@ -1,0 +1,11 @@
+﻿@model Compte
+@{
+    ViewData["Title"] = $"Déposer sur le compte n°{Model.Id}";
+}
+<form enctype="multipart/form-data" asp-controller="Banque" asp-action="Depot" method="post">
+    <div class="row m-1">
+        <input type="text" name="id" hidden value="@Model.Id"/>
+        <input type="text" name="montant" class="form-control col p-1 m-1" placeholder="Merci de saisir le montant du dépôt" />
+        <button class="col btn btn-primary m-1" type="submit">Valider</button>
+    </div>
+</form>

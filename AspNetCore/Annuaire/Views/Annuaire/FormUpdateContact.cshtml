@@ -1,0 +1,34 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Modifier Contact";
+}
+<div>
+    <h1>Contact n°@Model.Id</h1>
+    <div class=row>
+        <div class="col">@Model.FirstName</div>
+        <div class="col">@Model.LastName</div>
+        <div class="col">@Model.Phone</div>
+    </div>
+</div>
+<div>
+    <h2>Modifier le contact</h2>
+
+    <form enctype="multipart/form-data" asp-controller="Annuaire" asp-action="SubmitUpdateContact" method="post">
+        <div class="row m-1">
+            <input type="text" name="Id" class="form-control col p-1" value="@Model.Id" readonly >
+        </div>
+        <div class="row m-1">
+            <input type="text" name="FirstName" class="form-control col p-1" placeholder="Merci de saisir le nouveau Prénom" />
+        </div>
+        <div class="row m-1">
+            <input type="text" name="LastName" class="form-control col p-1" placeholder="Merci de saisir le nouveau Nom" />
+        </div>
+        <div class="row m-1">
+            <input type="text" name="Phone" class="form-control col p-1" placeholder="Merci de saisir le nouveau Téléphone" />
+        </div>
+        <div class="row m-1">
+            <button class="col btn btn-danger" type="submit">Confirmer la modification</button>
+        </div>
+    </form>
+
+</div>

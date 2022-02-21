@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Formulaire pour Contact";
+}
+
+<div>
+    <h1>Ajouter une personne</h1>
+
+    <form enctype="multipart/form-data" asp-controller="Annuaire" asp-action="SubmitContact" method="post">
+        <div class="row m-1">
+            <input type="text" name="FirstName" class="form-control col p-1" placeholder="Merci de saisir le Prénom" />
+        </div>
+        <div class="row m-1">
+            <input type="text" name="LastName" class="form-control col p-1" placeholder="Merci de saisir le Nom" />
+        </div>
+        <div class="row m-1">
+            <input type="text" name="Phone" class="form-control col p-1" placeholder="Merci de saisir le Téléphone" />
+        </div>
+        <div class="row m-1">
+            <button class="col btn btn-primary" type="submit">Valider</button>
+        </div>
+    </form>
+
+</div>

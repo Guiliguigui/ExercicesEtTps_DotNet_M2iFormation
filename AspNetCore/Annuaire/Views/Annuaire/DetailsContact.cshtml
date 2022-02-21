@@ -1,0 +1,12 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Details Contact";
+}
+<div>
+    <h1>Details de la Personne n°@Model.Id</h1>
+    <div class=row>
+        <div class="col">@Model.FirstName</div>
+        <div class="col">@Model.LastName</div>
+        <div class="col">@Model.Phone</div>
+    </div>
+</div>

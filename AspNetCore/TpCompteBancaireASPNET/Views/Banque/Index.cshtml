@@ -1,0 +1,24 @@
+﻿@model Compte
+@{
+    ViewData["Title"] = "Accueil Annuaire";
+}
+<div>
+    <h1>Accueil Banque</h1>
+    <div>
+        <form enctype="multipart/form-data" asp-controller="Banque" asp-action="Index" method="post">
+            <div class="row m-1">
+                <input type="text" name="id" class="form-control col p-1 m-1" placeholder="Merci de saisir un identifiant de compte" />
+                <button class="col btn btn-primary m-1" type="submit">Valider</button>
+            </div>
+        </form>
+    </div>
+    @if(Model != null)
+    {
+    <div class="row">
+        <div class="col col-1">Id : @Model.Id</div>
+        <div class="col col-8">Client : @Model.Client.Nom @Model.Client.Prenom @Model.Client.Telephone</div>
+        <div class="col col-2">Solde : @Model.Solde €</div>
+        <div class="col col-1"><a asp-controller="Banque" asp-action="DetailsCompte" asp-route-id="@Model.Id" class="btn btn-primary">Détails</a></div>
+    </div>
+    }
+</div>

@@ -1,0 +1,14 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Contact Sauvegardé";
+}
+<div>
+    <h1>Contact sauvegardé !</h1>
+    <h2>Contact n°@Model.Id</h2>
+    <div class=row>
+        <div class="col">@Model.FirstName</div>
+        <div class="col">@Model.LastName</div>
+        <div class="col">@Model.Phone</div>
+    </div>
+
+</div>

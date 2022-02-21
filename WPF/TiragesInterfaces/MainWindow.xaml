@@ -1,0 +1,42 @@
+﻿<Window x:Class="TiragesInterfaces.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiragesInterfaces"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="577" Width="690" Background="Chocolate">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <GroupBox Header="Ajouter à la liste" Margin="10 5">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton x:Name="MrRdBtn" Content="Mr" Margin="10 5" IsChecked="True"/>
+                        <RadioButton x:Name="MmeRdBtn" Content="Mme" Margin="10 5"/>
+                        <RadioButton x:Name="Mlle" Content="Mlle" Margin="10 5"/>
+                    </StackPanel>
+                    <Label Content="Nom :"/>
+                    <TextBox x:Name="LastNameTbx"/>
+                    <Label Content="Prénom :"/>
+                    <TextBox x:Name="FirstNameTbx"/>
+                    <Button x:Name="AddPerson"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Ajouter à la liste" Margin="10 5">
+                <StackPanel>
+                    <Label Content="Nom :"/>
+                    <!--<TextBox x:Name="LastNameTbx"/>
+                    <Label Content="Prénom :"/>
+                    <TextBox x:Name="FirstNameTbx"/>-->
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+
+        </StackPanel>
+    </Grid>
+</Window>

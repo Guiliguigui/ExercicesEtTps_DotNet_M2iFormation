@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Annuaire", "Annuaire\Annuaire.csproj", "{59C18328-89AC-4C56-8B17-C0CE5F61D84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpCompteBancaireASPNET", "TpCompteBancaireASPNET\TpCompteBancaireASPNET.csproj", "{B86327CB-7800-44CC-9DF1-9EE203C17470}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59C18328-89AC-4C56-8B17-C0CE5F61D84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C18328-89AC-4C56-8B17-C0CE5F61D84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C18328-89AC-4C56-8B17-C0CE5F61D84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C18328-89AC-4C56-8B17-C0CE5F61D84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86327CB-7800-44CC-9DF1-9EE203C17470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86327CB-7800-44CC-9DF1-9EE203C17470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86327CB-7800-44CC-9DF1-9EE203C17470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86327CB-7800-44CC-9DF1-9EE203C17470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {815F2E8E-0E81-4F1B-AE26-1E39386EE493}
+	EndGlobalSection
+EndGlobal

@@ -5,7 +5,11 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpNombreMystere", "TpNombreMystere\TpNombreMystere.csproj", "{B2C20C69-A690-44EB-89DB-64AB9759F0E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpCompteBancaireWPF", "TpCompteBancaireWPF\TpCompteBancaireWPF.csproj", "{E4EC9A83-F841-46AA-AF7B-19312E68C1ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpCompteBancaireWPF", "TpCompteBancaireWPF\TpCompteBancaireWPF.csproj", "{E4EC9A83-F841-46AA-AF7B-19312E68C1ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TirageTests", "TirageTests\TirageTests.csproj", "{739F6294-1CF0-4328-9FCE-C85BB4D6D9D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiragesInterfaces", "TiragesInterfaces\TiragesInterfaces.csproj", "{644652CC-34FC-4701-8DEF-AAA79A1ECFAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{E4EC9A83-F841-46AA-AF7B-19312E68C1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4EC9A83-F841-46AA-AF7B-19312E68C1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4EC9A83-F841-46AA-AF7B-19312E68C1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739F6294-1CF0-4328-9FCE-C85BB4D6D9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739F6294-1CF0-4328-9FCE-C85BB4D6D9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739F6294-1CF0-4328-9FCE-C85BB4D6D9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739F6294-1CF0-4328-9FCE-C85BB4D6D9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644652CC-34FC-4701-8DEF-AAA79A1ECFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644652CC-34FC-4701-8DEF-AAA79A1ECFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644652CC-34FC-4701-8DEF-AAA79A1ECFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644652CC-34FC-4701-8DEF-AAA79A1ECFAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
