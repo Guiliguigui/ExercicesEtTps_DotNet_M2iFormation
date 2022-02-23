@@ -1,0 +1,33 @@
+﻿@model List<User>
+@{
+    ViewData["Title"] = "Accueil Annuaire";
+}
+<div>
+    <h1>Utilisateurs/h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Pseudo</th>
+                <th scope="col">Admin</th>
+                <th scope="col" colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (User u in Model)
+            {
+                <tr>
+                    <th  scope="row">@u.Id</th>
+                    <td>@u.NickName</td>
+                    <td>@(u.IsAdmin?"Oui":"Non")</td>
+                    <td><a asp-controller="User" asp-action="DetailsUser" asp-route-id="@u.Id" class="btn btn-dark">Détails</a></td>
+                    <td><a asp-controller="User" asp-action="DeleteUser" asp-route-id="@u.Id" class="btn btn-danger">Supprimer</a></td>
+                    <td><a asp-controller="User" asp-action="FormUser" asp-route-id="@u.Id" class="btn btn-warning">Modifier</a></td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6"><a asp-controller="User" asp-action="FormUser" class="btn btn-dark">Nouveau</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

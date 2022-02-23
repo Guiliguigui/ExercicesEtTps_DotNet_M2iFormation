@@ -1,0 +1,33 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = $"Utilisateur n°{(Model.Id)}";
+}
+
+<h1>Utilisateur n°@(Model.Id) : @(Model.NickName)</h1>
+
+<div class="row">
+    <div class="col">
+        <div class="row">
+            @(Model.IsAdmin?"Administrateur":"Utilisateur")
+        </div>
+        <div class="row">
+            Prénom : @(Model.FirstName)
+        </div>
+        <div class="row">
+            Nom : @(Model.LastName)
+        </div>
+        <div class="row">
+            Email : @(Model.Email)
+        </div>
+        <div class="row">
+            Téléphone : @(Model.Phone)
+        </div>
+        <div class="row">
+            Mot de passe : @(Model.Password)
+        </div>
+        <div class="row">
+            <a asp-controller="User" asp-action="Index" class="btn btn-dark">Retour</a>
+        </div>
+    </div>
+</div>

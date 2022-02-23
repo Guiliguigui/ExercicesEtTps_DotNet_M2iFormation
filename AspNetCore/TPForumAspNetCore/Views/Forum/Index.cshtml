@@ -1,0 +1,35 @@
+﻿@model List<Topic>
+@{
+    ViewData["Title"] = "Forum";
+}
+<div>
+    <h1>Accueil Forum</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sujet</th>
+                <th scope="col">Auteur</th>
+                <th scope="col">Date de Création</th>
+                <th scope="col" colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Topic t in Model)
+            {
+                <tr>
+                    <th  scope="row">@t.Id</th>
+                    <td>@t.Subject</td>
+                    <td>@t.Author.NickName</td>
+                    <td>@t.DateCreation</td>
+                    <td><a asp-controller="Forum" asp-action="DetailsTopic" asp-route-id="@t.Id" class="btn btn-dark">Détails</a></td>
+                    <td><a asp-controller="Forum" asp-action="DeleteTopic" asp-route-id="@t.Id" class="btn btn-danger">Supprimer</a></td>
+                    <td><a asp-controller="Forum" asp-action="FormTopic" asp-route-id="@t.Id" class="btn btn-warning">Modifier</a></td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6"><a asp-controller="Forum" asp-action="FormTopic" class="btn btn-dark align-self-center">Nouveau</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
