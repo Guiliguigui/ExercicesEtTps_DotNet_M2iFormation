@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpCompteBancaireHeritage", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForumNouvelles", "ForumNouvelles\ForumNouvelles.csproj", "{679897C7-6BFD-4F7E-8477-4519565E478B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TpRegex", "TpRegex\TpRegex.csproj", "{E223D800-DE21-4214-91C9-378B088FD982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{679897C7-6BFD-4F7E-8477-4519565E478B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{679897C7-6BFD-4F7E-8477-4519565E478B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{679897C7-6BFD-4F7E-8477-4519565E478B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E223D800-DE21-4214-91C9-378B088FD982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E223D800-DE21-4214-91C9-378B088FD982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E223D800-DE21-4214-91C9-378B088FD982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E223D800-DE21-4214-91C9-378B088FD982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
