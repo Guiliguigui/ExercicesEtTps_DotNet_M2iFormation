@@ -21,14 +21,6 @@ namespace BanqueDbFirst.Models
         public virtual DbSet<Compte> Comptes { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Name=EFCoreDataBaseFirstContextConnection");
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
