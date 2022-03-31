@@ -15,5 +15,7 @@ namespace Banque.Data
         public DbSet<CompteEpargne> ComptesEpargnes { get; set; }
         public DbSet<ComptePayant> ComptesPayants { get; set; }
         public DbSet<Operation> Operations { get; set; }
+
+        //OnCreation n'est pas necessaire ici car j'ai mis un equivalent dans Startup.cs (lignes 30-31)
     }
 }

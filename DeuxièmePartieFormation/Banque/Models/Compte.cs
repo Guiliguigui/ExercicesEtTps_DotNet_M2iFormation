@@ -12,15 +12,16 @@ namespace Banque.Models
 
         public int Id { get => id; set => id = value; }
         [Required]
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column(TypeName = "money")]
         [DataType(DataType.Currency)]
-        [Range(0.0, 1000000000.0)]
+        [Range(-5000.0, 1000000000.0)]
         public decimal Solde { get => solde; set => solde = value; }
         [Required]
         public int ClientId { get; set; }
         [ForeignKey("ClientId")]
         public Client Client { get => client; set => client = value; }
         public IEnumerable<Operation> Operations { get; set; }
+        public string Discriminator { get; set; }
 
         public Compte()
         {

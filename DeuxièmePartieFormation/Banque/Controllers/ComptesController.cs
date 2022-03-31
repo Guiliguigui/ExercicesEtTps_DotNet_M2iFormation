@@ -13,6 +13,12 @@ namespace Banque.Controllers
     public class ComptesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private Dictionary<string, string> typesComptes = new Dictionary<string, string>()
+        {
+            {nameof(Compte), "Compte" },
+            {nameof(CompteEpargne), "Compte Epargne" },
+            {nameof(ComptePayant), "Compte Payant" }
+        };
 
         public ComptesController(ApplicationDbContext context)
         {
@@ -50,6 +56,7 @@ namespace Banque.Controllers
         public IActionResult Create()
         {
             ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email");
+            ViewData["TypesComptes"] = new SelectList(typesComptes, "Key", "Value");
             return View();
         }
 
@@ -58,15 +65,41 @@ namespace Banque.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Solde,ClientId")] Compte compte)
+        public async Task<IActionResult> Create([Bind("Id,Solde,ClientId,Discriminator,Taux,CoutOperation")] ToutCompteDTO compte)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(compte);
+                if (compte.Discriminator == "CompteEpargne" && compte.Taux != null)
+                {
+                    CompteEpargne compteEpargne = new CompteEpargne()
+                    {
+                        Solde = compte.Solde,
+                        ClientId = compte.ClientId,
+                        Taux = (decimal)compte.Taux,
+                    };
+                    _context.Add(compteEpargne);
+                }
+                else if (compte.Discriminator == "ComptePayant" && compte.CoutOperation != null)
+                {
+                    ComptePayant comptePayant = new ComptePayant()
+                    {
+                        Solde = compte.Solde,
+                        ClientId = compte.ClientId,
+                        CoutOperation = (decimal)compte.CoutOperation,
+                    };
+                    _context.Add(comptePayant);
+                }
+                else if (compte.Discriminator == "Compte")
+                {
+                    _context.Add(compte);
+                }
+                else
+                    return BadRequest("Error during creation of an account");
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email", compte.ClientId);
+            ViewData["TypesComptes"] = new SelectList(typesComptes, "Key", "Value");
             return View(compte);
         }
 

@@ -4,14 +4,16 @@ using Banque.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Banque.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220331080804_Discriminator")]
+    partial class Discriminator
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,7 +64,7 @@ namespace Banque.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Solde")
-                        .HasColumnType("money");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
 
@@ -87,7 +89,7 @@ namespace Banque.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Montant")
-                        .HasColumnType("money");
+                        .HasColumnType("decimal(5,2)");
 
                     b.HasKey("Id");
 
@@ -111,7 +113,7 @@ namespace Banque.Migrations
                     b.HasBaseType("Banque.Models.Compte");
 
                     b.Property<decimal>("CoutOperation")
-                        .HasColumnType("money");
+                        .HasColumnType("decimal(2,2)");
 
                     b.HasDiscriminator().HasValue("ComptePayant");
                 });

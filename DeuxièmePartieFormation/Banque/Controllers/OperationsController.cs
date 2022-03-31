@@ -63,7 +63,21 @@ namespace Banque.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(operation);
-                _context.Comptes.FirstOrDefault(c => c.Id == operation.CompteId).Solde += operation.Montant;
+                Compte compte = _context.Comptes.FirstOrDefault(c => c.Id == operation.CompteId);
+                compte.Solde += operation.Montant;
+                if (_context.Comptes.Find(operation.CompteId) is ComptePayant comptePayant && comptePayant.Discriminator == nameof(ComptePayant))
+                {
+                    _context.Add
+                        (
+                            new Operation()
+                            {
+                                DateOperation = DateTime.Now,
+                                CompteId = operation.CompteId,
+                                Montant = -comptePayant.CoutOperation
+                            }
+                        );
+                    compte.Solde -= comptePayant.CoutOperation;
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

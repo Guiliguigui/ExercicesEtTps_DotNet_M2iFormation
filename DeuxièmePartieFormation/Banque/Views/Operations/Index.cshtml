@@ -19,6 +19,9 @@
                 @Html.DisplayNameFor(model => model.DateOperation)
             </th>
             <th>
+                Type d'Opération
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CompteId)
             </th>
             <th></th>
@@ -28,13 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Montant)
+                @(item.Montant >= 0 ? "+" : "")@Html.DisplayFor(modelItem => item.Montant)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateOperation)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CompteId)
+                @(item.Montant >= 0 ? "Dépôt" : "Retrait")
+            </td>
+            <td>
+            <a asp-controller="Comptes" asp-action="Details" asp-route-id="@item.CompteId">@Html.DisplayFor(modelItem => item.CompteId)</a>
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

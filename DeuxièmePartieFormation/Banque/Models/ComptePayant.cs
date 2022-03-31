@@ -10,7 +10,7 @@ namespace Banque.Models
     {
         private decimal coutOperation;
         [Required]
-        [Column(TypeName = "decimal(2, 2)")]
+        [Column(TypeName = "money")]
         [DataType(DataType.Currency)]
         [Range(0.01, 50.0)]
         public decimal CoutOperation { get => coutOperation; set => coutOperation = value; }

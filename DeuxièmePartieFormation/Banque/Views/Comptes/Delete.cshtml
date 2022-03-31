@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Client)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Client.Email)
+            <a asp-controller="Clients" asp-action="Details" asp-route-id="@Model.Client.Id">@Html.DisplayFor(model => model.ClientId)</a>
         </dd class>
     </dl>
     

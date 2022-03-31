@@ -15,9 +15,9 @@ namespace Banque.Models
 
         public int Id { get => id; set => id = value; }
         [Required]
-        [Column(TypeName = "decimal(5, 2)")]
+        [Column(TypeName = "money")]
         [DataType(DataType.Currency)]
-        [Range(0.01, 10000.0)]
+        [Range(-10000.0, 10000.0)]
         public decimal Montant { get => montant; set => montant = value; }
         [Required]
         [DataType(DataType.Date)]

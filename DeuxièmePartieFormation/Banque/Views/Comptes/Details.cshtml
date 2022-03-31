@@ -17,6 +17,31 @@
             @Html.DisplayFor(model => model.Solde)
         </dd>
         <dt class = "col-sm-2">
+            Type de Compte
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Discriminator)
+        </dd>
+        @if (Model is CompteEpargne compteEpargne)
+        {
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => compteEpargne.Taux)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => compteEpargne.Taux) %
+            </dd>
+            @*Ajouter ici la fonctionnalité pour calculer les interrets en appelant une nouvelle méthode du controlleur*@
+        }
+        @if (Model is ComptePayant comptePayant)
+        {
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => comptePayant.CoutOperation)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => comptePayant.CoutOperation)
+            </dd>
+        }
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Client)
         </dt>
         <dd class = "col-sm-10">
@@ -33,7 +58,7 @@
                     @Html.DisplayNameFor(model => model.Operations.FirstOrDefault().DateOperation)
                 </th>
                 <th>
-                    Type
+                    Type d'Opération
                 </th>
                 <th></th>
             </tr>

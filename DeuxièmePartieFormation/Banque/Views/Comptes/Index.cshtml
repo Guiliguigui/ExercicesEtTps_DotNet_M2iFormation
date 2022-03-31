@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.Solde)
             </th>
             <th>
+                Type de Compte
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Client)
             </th>
             <th></th>
@@ -28,7 +31,10 @@
                 @Html.DisplayFor(modelItem => item.Solde)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Client.Email)
+                @Html.DisplayFor(modelItem => item.Discriminator)
+            </td>
+            <td>
+                <a asp-controller="Clients" asp-action="Details" asp-route-id="@item.ClientId">@Html.DisplayFor(modelItem => item.ClientId)</a>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
