@@ -1,0 +1,9 @@
+﻿@inherits BlazorApp1.Pages.MagicNumberBase
+@page "/MagicNumber"
+
+<h3>Nombre Magique</h3>
+<p>Devinez le nombre compris entre 0 et @max</p>
+<input  type="number" @bind-value="@Number" @bind-value:event="oninput" />
+<button @onclick="TestNumber" class="btn btn-primary">Tester</button>
+<p class="text-danger">@LifesString</p>
+@MagicNumber
