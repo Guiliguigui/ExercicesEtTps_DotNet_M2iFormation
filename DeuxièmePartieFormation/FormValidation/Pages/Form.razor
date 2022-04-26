@@ -1,0 +1,114 @@
+﻿@page "/form"
+@using FormValidation.Models
+@inherits FormBase
+<div class="row">
+    <div class="col-8">
+        <h3>Formulaire :</h3>
+        <EditForm OnValidSubmit="Submit" Model="Person">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Nom:</label>
+                    <InputText class="form-control" id="name" placeholder="Saisir votre nom" @bind-Value="Person.Name" />
+                    <small>
+                        <ValidationMessage For="() => Person.Name" />
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <InputText class="form-control" id="email" placeholder="Saisir une adresse email" @bind-Value="Person.Email" />
+                    <small>
+                        <ValidationMessage For="() => Person.Email" />
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="address">Adresse:</label>
+                    <InputText class="form-control" id="address" placeholder="Saisir une adresse" @bind-Value="Person.Address" />
+                    <small>
+                        <ValidationMessage For="() => Person.Address" />
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="postalCode">Code postal:</label>
+                    <InputText class="form-control" id="postalCode" placeholder="Saisir un Code postal" @bind-Value="Person.PostalCode" />
+                    <small>
+                        <ValidationMessage For="() => Person.PostalCode" />
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="age">Age:</label>
+                    <InputNumber class="form-control" id="age" placeholder="Saisir votre age" @bind-Value="Person.Age" />
+                    <small>
+                        <ValidationMessage For="() => Person.Age" />
+                    </small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="birthDate">Date de naissance:</label>
+                    <InputDate class="form-control" id="birthDate" @bind-Value="Person.BirthDate" />
+                    <small>
+                        <ValidationMessage For="() => Person.BirthDate" />
+                    </small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="favoriteColor">Couleur favorite :</label>
+                    <InputSelect class="form-control" id="favoriteColor" placeholder="Saisir une adresse email" @bind-Value="Person.FavoriteColor">
+                        @foreach (Colors color in Enum.GetValues(typeof(Colors)))
+                        {
+                            <option value="@color">@(color!=Colors.nothing?color:"Selectionner une couleur")</option>
+                        }
+                    </InputSelect>
+                    <small>
+                        <ValidationMessage For="() => Person.FavoriteColor" />
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <InputCheckbox id="married" @bind-Value="Person.IsMarried" />
+                <label for="married">Marrié(e)?</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Validation</button>
+        </EditForm>
+    </div>
+    <div class="col">
+        @if (ShowResult)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-info">Resultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nom : @Person.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Email : @Person.Email</td>
+                    </tr>
+                    <tr>
+                        <td>Age : @Person.Age</td>
+                    </tr>
+                    <tr>
+                        <td>Date de naissance : @Person.BirthDate.Date</td>
+                    </tr>
+                    <tr>
+                        <td>Couleur : @Person.FavoriteColor</td>
+                    </tr>
+                    <tr>
+                        <td>@(Person.IsMarried?"Marié(e)":"Pas marié(e)")</td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+

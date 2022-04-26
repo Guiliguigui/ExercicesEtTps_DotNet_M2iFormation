@@ -1,13 +1,12 @@
 ﻿@page "/MagicNumber/Result/{Result:bool}"
+@inject NavigationManager nav
 
 <h3>Nombre Magique</h3>
-<h2>
-    @( Result ? "Gagné ! 🤪" : "Perdu 😭")
-</h2>
 
-<NavLink class="btn btn-primary" href="MagicNumber">
-    Rejouer
-</NavLink>
+<h2>@( Result ? "Gagné ! 🤪" : "Perdu 😭")</h2>
+
+<NavLink class="btn btn-primary" href="MagicNumber">Rejouer</NavLink>
+
 @code {
     [Parameter]
     public bool Result { get; set; }
